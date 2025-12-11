@@ -10,6 +10,12 @@ Small FastAPI backend that shows a minimal workflow/graph engine with nodes, edg
 - FastAPI endpoints: create graph, run graph, fetch run state.
 - Sample workflow: Code Review mini-agent with a quality loop.
 
+### How it maps to a LangGraph-style workflow
+- Nodes = registered tools (Python callables) that read/update the shared state.
+- Edges = transitions with optional conditions; you can branch based on state.
+- State = a dict passed between nodes; each node can enrich or modify it.
+- Looping = edges can return to prior nodes while a condition holds (e.g., improve until `quality_score` ≥ threshold).
+
 ## Quickstart
 1) Create venv and install (Python 3.10+):
 ```bash
