@@ -1,0 +1,7 @@
+{
+  "graph_id": "code_review",
+  "initial_state": {
+    "code": "def foo():\n    print('hi')",
+    "quality_threshold": 0.6
+  }
+}
